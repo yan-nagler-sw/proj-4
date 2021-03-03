@@ -1,6 +1,6 @@
 version: '3'
 services:
     rest:
-        image: "yannagler/proj-3:${IMAGE_TAG}"
+        image: "yannagler/proj-4:${IMAGE_TAG}"
         ports:
             - "30000:30000"
