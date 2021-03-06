@@ -2,15 +2,11 @@ FROM python:3-slim
 
 RUN pip install pymysql
 RUN pip install flask
-RUN pip install requests
 
 WORKDIR /app
 
 COPY rest_app.py ./
 COPY db_connector.py ./
-COPY backend_testing_db.py ./
-COPY backend_testing_db.py ./
-COPY docker_backend_testing.py ./
 
 EXPOSE 30000/tcp
 
