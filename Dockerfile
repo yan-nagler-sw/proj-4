@@ -2,6 +2,7 @@ FROM python:3-slim
 
 RUN pip install pymysql
 RUN pip install flask
+RUN pip install requests
 
 WORKDIR /app
 
