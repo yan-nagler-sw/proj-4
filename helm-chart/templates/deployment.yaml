@@ -47,6 +47,20 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: secret-db
+              mountPath: "/mnt/proj-4/secret-db"
+              readOnly: true
+            - name: cfgmap-db
+              mountPath: "/mnt/proj-4/cfgmap-db"
+              readOnly: true
+      volumes:
+        - name: secret-db
+          secret:
+            secretName: proj-4-secret-db
+        - name: cfgmap-db
+          configMap:
+            name: proj-4-cfgmap-db
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
